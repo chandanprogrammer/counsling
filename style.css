@@ -19,4 +19,29 @@
 
 .hero-heading{
   background: #07dbd8;
+  width: 100%;
+}
+.title{
+  text-align: center;
+}
+.api-display{
+  width: 100%;
+  background: rgb(255, 222, 222);
+  text-align: center;
+  padding: 8px 0;
+  font-size: 18px;
+}
+.form-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+form{
+  width: 50%;
+}
+@media screen and (max-width: 768px){
+  form{
+    width: 100%;
+  }
 }
