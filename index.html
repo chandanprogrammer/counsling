@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <section class="hero is-bold hero-heading">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">Student Registration Form</h1>
+                </div>
+            </div>
+        </section>
+        <p>https://script.googleusercontent.com/macros/echo?user_content_key=rN5yV_4LJdbDRNZSBqKUkw167hKtvbi8UK-3pZJT25bdJHRyaX98s5We5tCOeqzjhqtJCW5e_LETdFm35dbdrxlXA3DbjV2Em5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnCJ2ua8Ambcs0ywgqbG7tyuBa-8mikSxvVSlZ0uljABF6EeIskrTjwVGSw2BYb8dX7-dMiQHz7tmfoDWKAF1XBPzDDVxtM6wGA&lib=MKZUvyF9gyGCdj1IJ4rzLvBkSyTqNRMpD</p>
+        <form id="form" class="container m-4 pl-4" method="POST" enctype="multipart/form-data">
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Enter Name" name="Name" />
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Father's Name</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Enter Father's Name" name="Father Name" />
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                    <input class="input" type="email" placeholder="Enter Your Email" name="Email" />
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Date of Birth</label>
+                <div class="control">
+                    <input class="input" type="date" placeholder="Your Date of Birth" name="DOB" />
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Gender</label>
+                <div class="control">
+                    <label class="radio">
+                        <input type="radio" name="Gender" value="male" /> Male
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="Gender" value="female" /> Female
+                    </label>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Category</label>
+                <div class="control">
+                    <select name="Category" id="category">
+                        <option value="general">General</option>
+                        <option value="obc">OBC</option>
+                        <option value="sc">SC</option>
+                        <option value="st">ST</option>
+                      </select>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Phone Number</label>
+                <div class="control">
+                    <input class="input" type="number" placeholder="Enter Phone number" name="Phone Number" />
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Form Number</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Enter Form number" name="Form Number" />
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">CUET Application Number</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Enter CUET Application Number" name="CUET Application No" />
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">CUET Marks</label>
+                <div class="control">
+                    <input class="input" type="number" placeholder="Enter CUET Marks" name="CUET Marks" />
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">10th Marksheet</label>
+                <div class="control">
+                    <input class="input" type="file" accept="image/*,.pdf" placeholder="" name="10th Marksheet" id="marksheet-10th"/>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">12th Marksheet</label>
+                <div class="control">
+                    <input class="input" type="file" accept="image/*,.pdf" placeholder="" name="12th Marksheet" id="marksheet-12th"/>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Additional Information</label>
+                <div class="control">
+                    <textarea class="textarea" placeholder="Any additional information" name="Notes"></textarea>
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-primary" type="submit" id="submit-button">
+                        Submit
+                    </button>
+                </div>
+                <div class="control">
+                    <button class="button is-danger">Cancel</button>
+                </div>
+            </div>
+        </form>
+        <div id="submitMessage"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

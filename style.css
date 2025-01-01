@@ -1,0 +1,22 @@
+#submitMessage {
+  display: none;
+  margin: 20px;
+  font-weight: bold;
+  color: green;
+  padding: 8px;
+  background-color: beige;
+  border-radius: 4px;
+  border-color: aquamarine;
+}
+#category{
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid rgba(202, 202, 202, 0.674);
+    border-radius: 4px;
+    color: #000;
+    font-size: 16px;
+}
+
+.hero-heading{
+  background: #07dbd8;
+}
