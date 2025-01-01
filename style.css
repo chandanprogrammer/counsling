@@ -16,6 +16,11 @@
   color: #000;
   font-size: 16px;
 }
+a{
+  color: rgb(30, 30, 250);
+  font-size: 16px;
+  font-weight: 500;
+}
 .hero-heading {
   background: #07dbd8;
   width: 100%;

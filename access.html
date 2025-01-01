@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", serif;
+        }
+        #table{
+            margin-top: 20px;
+            border: 1px solid rgb(0, 0, 0);
+        }
+        th{
+            font-weight: 500;
+            font-size: 16px;
+            padding: 6px 4px;
+        }
+        thead{
+            background-color: rgb(225, 225, 225);
+        }
+        tbody{
+            background-color: rgb(249, 219, 159);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>Show data List</div>
+    <button type="button" onclick="fetchData()">Refresh</button>
+    <button onclick="collectEmail()">Collect Email</button>
+    <button onclick="sendEmail()">send Email</button>
+    <p id="displayCollectedList" style="padding: 15px;">Click collect Email to get collected list.</p>
+    <a href="./index.html">Home Page</a>
+    <table border="1" id="table" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Father's Name</th>
+                <th>Mother's Name</th>
+                <th>Email</th>
+                <th>DOB</th>
+                <th>Gender</th>
+                <th>Category</th>
+                <th>Phone Number</th>
+                <th>Form Number</th>
+                <th>CUET Application No</th>
+                <th>CUET Marks</th>
+                <th>10th Marksheet</th>
+                <th>12th Marksheet</th>
+                <th>Submitted Time</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            
+        </tbody>
+    </table>
+
+</body>
+<script src="access.js"></script>
+
+</html>

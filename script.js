@@ -1,6 +1,8 @@
 const form = document.getElementById("form");
 const submitMessage = document.getElementById("submitMessage");
 const submitButton = document.getElementById("submit-button");
+const marksheet10th = document.getElementById("marksheet-10th");
+const marksheet12th = document.getElementById("marksheet-12th");
 
 // ------- Action performed when the form is submitted -------
 form.addEventListener("submit", function (e) {
@@ -10,17 +12,21 @@ form.addEventListener("submit", function (e) {
   submitButton.disabled = true;
 
   // Collect the form data
-  var formData = new FormData(this);
-  var keyValuePairs = [];
-  for (var pair of formData.entries()) {
+  let formData = new FormData(this);
+  let currentDate = new Date();
+
+  let keyValuePairs = [];
+  for (let pair of formData.entries()) {
     keyValuePairs.push(pair[0] + "=" + pair[1]);
   }
-  var formDataString = keyValuePairs.join("&");
+  keyValuePairs.push("Timestamp=" + currentDate.toISOString());
 
-  const marksheet10th = document.getElementById("marksheet-10th");
-  const marksheet12th = document.getElementById("marksheet-12th");
+  console.log(keyValuePairs);
+
+  let formDataString = keyValuePairs.join("&");
+
   const URL =
-    "https://script.google.com/macros/s/AKfycbzXKpK-bQK1CuEFpYiPOxSWTJWHskWkBp5podiGOaCSFKBVmo2ZfwMFANaApw2FQM7S/exec";
+    "https://script.google.com/macros/s/AKfycbxPVZdMohRRYEzKHL-eByxnKgEcSetthJGC5pyy-LmxT9wjdIyKcBTRZVf6MTMSLmyg9g/exec";
 
   if (
     !marksheet10th ||

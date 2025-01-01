@@ -1,6 +1,6 @@
-function doPost(e) {
-  const DATA_ENTRY_SHEET_NAME = "Sheet1";
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(DATA_ENTRY_SHEET_NAME);
+let doPost = (e) => {
+  let doc = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = doc.getSheetByName("Sheet1");
 
   function parseFormData(postData) {
     const data = {};
@@ -15,7 +15,9 @@ function doPost(e) {
   function appendToGoogleSheet(data) {
     if (!sheet) throw new Error(`Sheet "${DATA_ENTRY_SHEET_NAME}" not found.`);
 
-    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    const headers = sheet
+      .getRange(1, 1, 1, sheet.getLastColumn())
+      .getValues()[0];
     const rowData = headers.map((header) => data[header] || "");
     sheet.appendRow(rowData);
   }
@@ -59,42 +61,4 @@ function doPost(e) {
       JSON.stringify({ error: err.toString() })
     ).setMimeType(ContentService.MimeType.JSON);
   }
-}
-
-
-
-// const DATA_ENTRY_SHEET_NAME = "Sheet1";
-// const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(DATA_ENTRY_SHEET_NAME);
-
-// function doPost(e) {
-//   try {
-//     const obj = JSON.parse(e.postData.contents);
-//     const files = obj.files;
-
-//     if (!Array.isArray(files) || files.length === 0) {
-//       throw new Error("No files received in the request.");
-//     }
-
-//     const links = files.map((file) => {
-//       const decode = Utilities.base64Decode(file.base64);
-//       const blob = Utilities.newBlob(decode, file.type, file.name);
-//       const newFile = DriveApp.createFile(blob);
-//       return newFile
-//         .setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW)
-//         .getDownloadUrl();
-//     });
-
-//     const lr = sheet.getLastRow();
-//     links.forEach((link, index) => {
-//       sheet.getRange(lr + 1, 11 + index).setFormula(`=IMAGE("${link}")`);
-//     });
-
-//     return ContentService.createTextOutput(
-//       JSON.stringify({ message: "Files uploaded successfully", links: links })
-//     ).setMimeType(ContentService.MimeType.JSON);
-//   } catch (err) {
-//     return ContentService.createTextOutput(
-//       JSON.stringify({ error: err.toString() })
-//     ).setMimeType(ContentService.MimeType.JSON);
-//   }
-// }
+};
